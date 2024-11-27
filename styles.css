@@ -1,3 +1,30 @@
+@keyframes changeShadowColor {
+    0% {
+        box-shadow: 0 0 50px red;
+        transform: translate(0, 0);
+    }
+
+    25% {
+        box-shadow: 0 0 50px orange;
+        transform: translate(10px, 10px);
+    }
+
+    50% {
+        box-shadow: 0 0 50px yellow;
+        transform: translate(-10px, -10px);
+    }
+
+    75% {
+        box-shadow: 0 0 50px green;
+        transform: translate(10px, -10px);
+    }
+
+    100% {
+        box-shadow: 0 0 50px blue;
+        transform: translate(0, 0);
+    }
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -59,7 +86,7 @@ header {
     width: 100%;
 }
 
-header > a > img {
+header>a>img {
     border-radius: 50%;
     padding: 10px;
     height: 100px;
@@ -71,7 +98,7 @@ main {
     width: 100%;
 }
 
-main > section {
+main>section {
     justify-content: center;
     align-items: center;
     position: relative;
@@ -82,7 +109,7 @@ main > section {
     width: 100vw;
 }
 
-main > section > img {
+main>section>img {
     position: absolute;
     object-fit: cover;
     filter: blur(5px);
@@ -93,11 +120,16 @@ main > section > img {
     top: 0;
 }
 
-main > section > div {
+main>section>div {
     padding: 25px;
 }
 
-main > section > div > img {
+main>section>div.compact {
+    max-width: 480px;
+}
+
+main>section>div>img {
+    animation: changeShadowColor 5s infinite;
     max-height: 320px;
     height: auto;
     width: 100%;
